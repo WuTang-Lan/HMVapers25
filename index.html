@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMVapers - Premium Vaping Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="bg-dark-green shadow animate-header-slide">
+        <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+            <!-- Brand Logo -->
+            <a href="#" class="text-2xl font-bold text-white hover:text-green-300 transition">HMVapers</a>
+
+            <!-- Navigation Menu -->
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#" class="text-gray-300 hover:text-green-300 transition">Home</a></li>
+                <li><a href="#products" class="text-gray-300 hover:text-green-300 transition">Products</a></li>
+                <li><a href="#about" class="text-gray-300 hover:text-green-300 transition">About</a></li>
+                <li><a href="#contact" class="text-gray-300 hover:text-green-300 transition">Contact</a></li>
+            </ul>
+
+            <!-- Cart and Mobile Menu -->
+            <div class="flex items-center space-x-4">
+                <!-- Cart Button -->
+                <button id="cartToggle" class="relative hover:scale-110 transition-transform">
+                    <i data-lucide="droplet" class="w-6 h-6 text-white"></i>
+                    <span id="cartCount" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-semibold w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuToggle" class="block md:hidden hover:scale-110 transition-transform">
+                    <i data-lucide="menu" class="w-6 h-6 text-white"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark-green border-t border-gray-600 animate-fade-in">
+            <ul class="space-y-4 p-4">
+                <li><a href="#" class="block text-gray-300 hover:text-green-300 transition">Home</a></li>
+                <li><a href="#products" class="block text-gray-300 hover:text-green-300 transition">Products</a></li>
+                <li><a href="#about" class="block text-gray-300 hover:text-green-300 transition">About</a></li>
+                <li><a href="#contact" class="block text-gray-300 hover:text-green-300 transition">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero bg-dark-green py-20 relative">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white animate-fade-in">Experience the Purest Vaping Clouds</h1>
+            <p class="mt-4 text-lg text-gray-300 animate-slide-up">Discover premium products crafted for enthusiasts</p>
+            <button class="mt-6 px-8 py-3 bg-green-700 text-white text-lg font-medium rounded hover:bg-green-800 transition-transform transform hover:scale-105 animate-pulse">Shop Now</button>
+        </div>
+        <!-- Decorative Background -->
+        <div class="absolute inset-0 -z-10 bg-gradient-to-r from-green-900 via-gray-800 to-green-700 opacity-70">
+            <img src="https://source.unsplash.com/1920x1080/?vape" alt="Vape Background" class="w-full h-full object-cover opacity-40">
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-gray-100">
+        <div class="container mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-800">Our Products</h2>
+                <p class="mt-4 text-gray-600">Explore a wide range of premium vaping products crafted for every enthusiast.</p>
+            </div>
+            <!-- Filter Buttons -->
+            <div class="flex justify-center mb-8 space-x-4">
+                <button data-category="all" class="category-btn px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 transition">All</button>
+                <button data-category="device" class="category-btn px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-green-800 hover:text-white transition">Devices</button>
+                <button data-category="liquid" class="category-btn px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-green-800 hover:text-white transition">Liquids</button>
+                <button data-category="accessories" class="category-btn px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-green-800 hover:text-white transition">Accessories</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="productGrid">
+                <!-- Product Card 1 -->
+                <div class="bg-white shadow rounded-lg overflow-hidden" data-category="device">
+                    <img src="https://assets.onecompiler.app/42neyrg2v/432twh6sv/pexels-stitch-19901858.jpg" alt="Product 1" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800">Vape Device X</h3>
+                        <p class="mt-2 text-gray-600">A sleek, high-performance vaping device designed for the ultimate experience.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-green-700 font-bold text-lg">$99.99</span>
+                            <button class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 transition add-to-cart" data-name="Vape Device X" data-price="99.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="bg-white shadow rounded-lg overflow-hidden" data-category="liquid">
+                    <img src="https://assets.onecompiler.app/42neyrg2v/432twh6sv/download.jpeg" alt="Product 2" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800">Premium Vape Liquid</h3>
+                        <p class="mt-2 text-gray-600">Smooth and flavorful, crafted for an exceptional vaping experience.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-green-700 font-bold text-lg">$19.99</span>
+                            <button class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 transition add-to-cart" data-name="Premium Vape Liquid" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="bg-white shadow rounded-lg overflow-hidden" data-category="accessories">
+                    <img src="https://assets.onecompiler.app/42neyrg2v/432twh6sv/28c56bea80248dd840508bd8a655c399_2048x.jpg" alt="Product 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800">Vaping Accessories</h3>
+                        <p class="mt-2 text-gray-600">High-quality accessories to enhance your vaping experience.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-green-700 font-bold text-lg">$29.99</span>
+                            <button class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 transition add-to-cart" data-name="Vaping Accessories" data-price="29.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Product Card 4 -->
+                <div class="bg-white shadow rounded-lg overflow-hidden" data-category="accessories">
+                    <img src="https://assets.onecompiler.app/42neyrg2v/432twh6sv/images.jpeg" alt="Product 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800">Vaping Accessories</h3>
+                        <p class="mt-2 text-gray-600">High-quality accessories to enhance your vaping experience.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-green-700 font-bold text-lg">$29.99</span>
+                            <button class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 transition add-to-cart" data-name="Vaping Accessories" data-price="29.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Product Card 5 -->
+                <div class="bg-white shadow rounded-lg overflow-hidden" data-category="accessories">
+                    <img src="https://assets.onecompiler.app/42neyrg2v/432twh6sv/60ml-Blue-Tobacco.jpg" alt="Product 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800">Vaping Accessories</h3>
+                        <p class="mt-2 text-gray-600">High-quality accessories to enhance your vaping experience.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-green-700 font-bold text-lg">$29.99</span>
+                            <button class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 transition add-to-cart" data-name="Vaping Accessories" data-price="29.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Product Card 6 -->
+                <div class="bg-white shadow rounded-lg overflow-hidden" data-category="accessories">
+                    <img src="https://assets.onecompiler.app/42neyrg2v/432twh6sv/liqua_2.jpg" alt="Product 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-gray-800">Vaping Accessories</h3>
+                        <p class="mt-2 text-gray-600">High-quality accessories to enhance your vaping experience.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-green-700 font-bold text-lg">$29.99</span>
+                            <button class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 transition add-to-cart" data-name="Vaping Accessories" data-price="29.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+     <!-- Top Sells Section -->
+    <section id="top-sells" class="py-20 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-10">Top Sells</h2>
+            <div class="relative overflow-hidden">
+                <div id="carousel" class="flex space-x-6 animate-slide" style="animation: slide 15s linear infinite;">
+                    <!-- Dynamic Product Cards -->
+                    <div class="bg-white shadow rounded-lg p-4 flex-shrink-0 w-80">
+                        <img src="https://assets.onecompiler.app/42neyrg2v/432twh6sv/Best-Vape-juice-salt-nic.jpg" alt="Top Sell 1" class="rounded mb-4">
+                        <h3 class="text-lg font-bold text-gray-800">Top Vape 1</h3>
+                        <p class="text-gray-600">High-performance vape for enthusiasts.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-green-700 font-bold">$59.99</span>
+                            <button class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 transition">Buy Now</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white shadow rounded-lg p-4 flex-shrink-0 w-80">
+                        <img src="https://assets.onecompiler.app/42neyrg2v/432twh6sv/Best-Vape-juice-salt-nic.jpg" alt="Top Sell 2" class="rounded mb-4">
+                        <h3 class="text-lg font-bold text-gray-800">Top Liquid</h3>
+                        <p class="text-gray-600">Smooth and flavorful vape liquid.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-green-700 font-bold">$19.99</span>
+                            <button class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 transition">Buy Now</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white shadow rounded-lg p-4 flex-shrink-0 w-80">
+                        <img src="https://assets.onecompiler.app/42neyrg2v/432twh6sv/Best-Vape-juice-salt-nic.jpg" alt="Top Sell 3" class="rounded mb-4">
+                        <h3 class="text-lg font-bold text-gray-800">Vape Accessories</h3>
+                        <p class="text-gray-600">Enhance your experience with premium accessories.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-green-700 font-bold">$29.99</span>
+                            <button class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 transition">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Cart Sidebar -->
+    <aside id="cartSidebar" class="fixed top-0 right-0 w-80 h-full bg-white shadow-lg transform translate-x-full transition-transform">
+        <div class="p-4 border-b">
+            <h3 class="text-xl font-bold text-gray-800">Your Cart</h3>
+            <button id="cartClose" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">&times;</button>
+        </div>
+        <div id="cartItems" class="p-4 space-y-4 overflow-y-auto h-[70%]"></div>
+        <div class="p-4 border-t">
+            <div class="flex justify-between text-lg font-bold">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="mt-4 w-full px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800 transition">Checkout</button>
+        </div>
+    </aside>
+    <footer class="bg-dark-green text-white py-6">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+            <h3 class="text-xl font-bold">HMVapers</h3>
+            <p class="mt-2">Premium vaping products crafted for enthusiasts.</p>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold">Quick Links</h3>
+            <ul class="mt-2 space-y-2">
+                <li><a href="#" class="hover:text-green-300">Home</a></li>
+                <li><a href="#products" class="hover:text-green-300">Products</a></li>
+                <li><a href="#about" class="hover:text-green-300">About</a></li>
+                <li><a href="#contact" class="hover:text-green-300">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold">Follow Us</h3>
+            <div class="flex space-x-4 mt-2">
+                <a href="#" class="text-white hover:text-green-300"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                <a href="#" class="text-white hover:text-green-300"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                <a href="#" class="text-white hover:text-green-300"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-6 text-sm border-t border-gray-600 pt-4">
+        © 2024 HMVapers. All rights reserved.
+    </div>
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>
+    const phrases = [
+    "Experience the Purest Vaping Clouds.",
+    "Your Premium Vaping Companion.",
+    "Crafted for Enthusiasts, Loved by All."
+];
+ // Dynamically randomize animation delays for added variety
+        const carousel = document.getElementById('carousel');
+        const products = Array.from(carousel.children);
+        products.forEach(product => {
+            const delay = Math.random() * 2 + 3; // Random between 3s and 5s
+            product.style.animationDelay = `${delay}s`;
+        });
+let phraseIndex = 0;
+let charIndex = 0;
+const typeSpeed = 150;
+const eraseSpeed = 100;
+const delayBetweenPhrases = 2000;
+
+const heroHeading = document.querySelector('.hero h1');
+
+function typeText() {
+    if (charIndex < phrases[phraseIndex].length) {
+        heroHeading.textContent += phrases[phraseIndex][charIndex];
+        charIndex++;
+        setTimeout(typeText, typeSpeed);
+    } else {
+        setTimeout(eraseText, delayBetweenPhrases);
+    }
+}
+
+function eraseText() {
+    if (charIndex > 0) {
+        heroHeading.textContent = phrases[phraseIndex].slice(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseText, eraseSpeed);
+    } else {
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        setTimeout(typeText, typeSpeed);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => typeText());
+
+        // Initialize icons
+        lucide.createIcons();
+
+        // Toggle Mobile Menu
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Cart Sidebar Functionality
+        const cartToggle = document.getElementById('cartToggle');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const cartClose = document.getElementById('cartClose');
+        cartToggle.addEventListener('click', () => {
+            cartSidebar.classList.toggle('translate-x-full');
+        });
+        cartClose.addEventListener('click', () => {
+            cartSidebar.classList.add('translate-x-full');
+        });
+
+        // Cart Management
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const cartCount = document.getElementById('cartCount');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+        let cart = [];
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productName = button.dataset.name;
+                const productPrice = parseFloat(button.dataset.price);
+
+                // Check if item exists
+                const existingItem = cart.find(item => item.name === productName);
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({ name: productName, price: productPrice, quantity: 1 });
+                }
+
+                updateCartUI();
+            });
+        });
+
+        function updateCartUI() {
+            cartItems.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                const cartItem = document.createElement('div');
+                cartItem.className = 'flex justify-between items-center';
+                cartItem.innerHTML = `
+                    <span>${item.name} (x${item.quantity})</span>
+                    <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+
+            cartTotal.textContent = `$${total.toFixed(2)}`;
+            cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+        }
+    </script>
+
+    <style>
+        :root {
+            --dark-green: #013220;
+        }
+
+        .bg-dark-green {
+            background-color: var(--dark-green);
+        }
+
+        .animate-header-slide {
+            animation: header-slide 1.5s ease-out;
+        }
+
+        @keyframes header-slide {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slide-up {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 1.5s ease-out;
+        }
+
+        .animate-slide-up {
+            animation: slide-up 1.5s ease-out;
+        }
+
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        #cartSidebar {
+            z-index: 100;
+        }
+    </style>
+</body>
+</html>
